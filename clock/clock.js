@@ -6,11 +6,9 @@ export default React.memo((props) => {
   const [time, setTime] = useState(getTime());
   console.log('Clock component');
 
-  let interval = null;
-
   useEffect(() => {
     console.log('Clock node component will mount');
-    interval = setInterval(() => { setTime(getTime()); }, 1000);
+    const interval = setInterval(() => { setTime(getTime()); }, 1000);
 
     return () => {
       clearInterval(interval);
